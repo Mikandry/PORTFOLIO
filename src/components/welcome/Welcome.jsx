@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 
 // Replace with your actual photo path
-import backgroundImage from '/images/mikaPro.jpeg';
+import backgroundImage from '/images/devweb2.jpeg';
 
 function Welcome() {
   const navigate = useNavigate();

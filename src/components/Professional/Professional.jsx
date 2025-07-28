@@ -1,6 +1,6 @@
 import React from 'react';
 import { FiHome, FiUser, FiBriefcase, FiSmile, FiAward, FiMail } from 'react-icons/fi';
-import { FaLinkedin, FaGithub, FaEnvelope, FaChartLine, FaLaptopCode, FaGraduationCap, FaLanguage, FaUsers, FaCertificate } from 'react-icons/fa';
+import { FaLinkedin, FaGithub, FaEnvelope, FaChartLine, FaLaptopCode, FaGraduationCap, FaLanguage, FaUsers, FaCertificate,FaWhatsapp } from 'react-icons/fa';
 import { motion } from 'framer-motion';
 
 export default function Professional() {
@@ -61,6 +61,14 @@ export default function Professional() {
                   whileTap={{ scale: 0.9 }}
                 >
                   <FiSmile className="text-2xl" />
+                </motion.a>
+                <motion.a 
+                  href="https://wa.me/+261340604716" 
+                  className="text-white hover:text-emerald-200 transition-colors"
+                  whileHover={{ scale: 1.1 }}
+                  whileTap={{ scale: 0.9 }}
+                >
+                  <FaWhatsapp className="text-2xl" />
                 </motion.a>
                 <motion.a 
                   href="/home" 

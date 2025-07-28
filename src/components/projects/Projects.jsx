@@ -175,7 +175,7 @@ const Projects = () => {
 
         <div className="text-center mt-12">
           <a 
-            href="https://github.com/yourusername" 
+            href="https://github.com/Mikandry" 
             target="_blank" 
             rel="noopener noreferrer"
             className="inline-block px-6 py-3 border border-emerald-400 text-emerald-400 hover:bg-emerald-400/10 rounded-lg transition-all duration-300 hover:shadow-lg hover:shadow-emerald-400/20"

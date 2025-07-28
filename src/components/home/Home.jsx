@@ -73,7 +73,7 @@ function Home() {
             />
           </div>
           <h2>Andry Ramaroson</h2>
-          <p>Back End Developer, junior Front End</p>
+          <p>Intermediate Back End Developer, junior Front End</p>
         </div>
 
         <div className="nav-links">
