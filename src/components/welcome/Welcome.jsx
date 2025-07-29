@@ -8,18 +8,72 @@ import backgroundImage from '/images/devweb2.jpeg';
 function Welcome() {
   const navigate = useNavigate();
 
+  // Replace these with your actual CV file paths
+  const cvFiles = {
+    tech: {
+      en: '/cv/Admin resume-en.pdf',
+      fr: '/cv/devWeb-fr.pdf'
+    },
+    professional: {
+      en: '/cv/Admin resume-en.pdf',
+      fr: '/cv/AdminCV-fr.pdf'
+    }
+  };
+
   return (
     <div 
       className="relative flex items-center justify-center h-screen overflow-hidden"
       style={{
         backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(${backgroundImage})`,
         backgroundSize: 'cover',
-        backgroundPosition: 'center top', // Changed to focus on top of image
+        backgroundPosition: 'center top',
         backgroundAttachment: 'fixed',
       }}
     >
       {/* Overlay */}
       <div className="absolute inset-0 bg-black/30"></div>
+      
+      {/* CV Download Links - Top Right Corner */}
+      <div className="absolute top-4 right-4 z-20 flex flex-col space-y-2 bg-gray-800/90 p-3 rounded-lg shadow-lg">
+        <div className="flex flex-col space-y-1">
+          <span className="text-xs text-emerald-400 font-semibold">Technology Resume or CV </span>
+          <div className="flex space-x-2">
+            <a 
+              href={cvFiles.tech.en} 
+              download 
+              className="text-xs text-white hover:text-emerald-300 transition-colors"
+            >
+              English
+            </a>
+            <a 
+              href={cvFiles.tech.fr} 
+              download 
+              className="text-xs text-white hover:text-emerald-300 transition-colors"
+            >
+              Français
+            </a>
+          </div>
+        </div>
+        <div className="flex flex-col space-y-1">
+          <span className="text-xs text-emerald-400 font-semibold">Professional Profile</span>
+          <div className="flex space-x-2">
+            <a 
+              href={cvFiles.professional.en} 
+              download 
+              className="text-xs text-white hover:text-emerald-300 transition-colors"
+            >
+              English
+            </a>
+            <a 
+              href={cvFiles.professional.fr} 
+              download 
+              className="text-xs text-white hover:text-emerald-300 transition-colors"
+            >
+              Français
+            </a>
+          </div>
+        </div>
+      </div>
       
       {/* Content */}
       <motion.div 
