@@ -79,7 +79,7 @@ const Projects = () => {
   };
 
   return (
-    <section className="py-12 md:py-20 px-4 bg-gradient-to-b from-gray-900 to-black">
+    <section id="projects" className="py-12 md:py-20 px-4 bg-gradient-to-b from-gray-900 to-black">
       <div className="max-w-7xl mx-auto">
         <motion.div 
           className="text-center mb-12 md:mb-16"
@@ -110,9 +110,9 @@ const Projects = () => {
                 variants={cardVariants}
               >
                 <div className="bg-gray-800 hover:bg-gray-700 p-6 rounded-xl shadow-xl border border-gray-700 hover:border-emerald-400 transition-all duration-300 h-full flex flex-col group">
-                  <div className="flex justify-between items-start mb-4">
+                  <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start mb-4 gap-2">
                     <h2 className="text-xl md:text-2xl font-bold text-white">{project.title}</h2>
-                    <div className="flex space-x-2">
+                    <div className="flex flex-wrap gap-2">
                       {project.tags?.map((tag, i) => (
                         <span 
                           key={i} 
@@ -131,12 +131,14 @@ const Projects = () => {
                         target="_blank" 
                         rel="noopener noreferrer"
                         className="block h-full"
+                        aria-label={`View ${project.title} project`}
                       >
                         <motion.img
                           src={project.image}
                           alt={project.title}
                           className="w-full h-full object-cover rounded-lg transition-transform duration-500 group-hover:scale-105"
                           whileHover={{ scale: 1.03 }}
+                          loading="lazy"
                         />
                         <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors duration-300" />
                       </a>
@@ -146,6 +148,7 @@ const Projects = () => {
                         alt={project.title}
                         className="w-full h-full object-cover rounded-lg"
                         whileHover={{ scale: 1.03 }}
+                        loading="lazy"
                       />
                     )}
                   </div>
@@ -159,6 +162,7 @@ const Projects = () => {
                         target="_blank"
                         rel="noopener noreferrer"
                         className="inline-flex items-center px-4 py-2 bg-emerald-600 hover:bg-emerald-700 rounded-lg text-white transition-all duration-300 group-hover:shadow-lg group-hover:shadow-emerald-500/20"
+                        aria-label={`View ${project.title} project on GitHub`}
                       >
                         View Project
                         <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -174,14 +178,17 @@ const Projects = () => {
         </motion.div>
 
         <div className="text-center mt-12">
-          <a 
+          <motion.a 
             href="https://github.com/Mikandry" 
             target="_blank" 
             rel="noopener noreferrer"
             className="inline-block px-6 py-3 border border-emerald-400 text-emerald-400 hover:bg-emerald-400/10 rounded-lg transition-all duration-300 hover:shadow-lg hover:shadow-emerald-400/20"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            aria-label="View all projects on GitHub"
           >
             View All Projects on GitHub
-          </a>
+          </motion.a>
         </div>
       </div>
     </section>
