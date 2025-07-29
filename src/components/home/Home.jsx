@@ -22,7 +22,7 @@ import { useNavigate } from 'react-router-dom';
 import About from '../About/About';
 import Projects from '../projects/Projects';
 import Contact from '../contact/Contact';
-import './Home.css';
+import './home.css';
 
 function Home() {
   const [isHovered, setIsHovered] = useState(false);
